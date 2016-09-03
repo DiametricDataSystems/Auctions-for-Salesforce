@@ -69,7 +69,7 @@ global with sharing class AUC_CTRL_AuctionReceipts {
 	// for the Open button, to open the receipts pdf  
 	public string strOpenReceiptURL {
 		get {
-			string str =  '/apex/GW_Auctions__AuctionReceipts' +
+			string str =  '/apex/AuctionReceipts' +
 	        	'?RenderFormat=pdf' +
 	        	'&auctionId=' + auctionId;
 	        	
