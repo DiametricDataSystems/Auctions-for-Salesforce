@@ -330,7 +330,7 @@ global with sharing class AUC_CTRL_AuctionCheckIn {
 					string cmpIdTickets = auctionMaintenance.campaignIdAuctionTickets;
 					
 					string strSoql = 'select Id';
-					for (string str : AUC_AuctionMaintenance.listStrFromFieldSet('Opportunity', 'GW_Auctions__AuctionCheckInFS')) {
+					for (string str : AUC_AuctionMaintenance.listStrFromFieldSet('Opportunity', 'AuctionCheckInFS')) {
 						strSoql += ', Opportunity.' + str;
 					}
 					strSoql += ' from OpportunityContactRole ' +
@@ -383,9 +383,9 @@ global with sharing class AUC_CTRL_AuctionCheckIn {
 	    			string strSoql = 'select ' + strCMFields +
     					' from CampaignMember' + 
     					' where campaignId = \'' + auctionMaintenance.campaignIdAuctionAttendees + '\' and ' +
-    						' (GW_Auctions__Auction_Ticket_OppId__c in :setTicketOppId ';
+    						' (Auction_Ticket_OppId__c in :setTicketOppId ';
     				if (IsCaptainContact && idCaptain != null) {
-    					strSoql += ' or GW_Auctions__Table_Captain__c = :idCaptain ';
+    					strSoql += ' or Table_Captain__c = :idCaptain ';
     				}
     				strSoql += ')';
     				
@@ -409,11 +409,11 @@ global with sharing class AUC_CTRL_AuctionCheckIn {
 	    			    					
 					// add slots for people who specified this table captain, but aren't on the captain's ticket opp
 					for (CampaignMember cm : listCM) {
-						if (!setTicketOppId.contains(cm.GW_Auctions__Auction_Ticket_OppId__c)) {
+						if (!setTicketOppId.contains(cm.Auction_Ticket_OppId__c)) {
 							numTickets++;
 						} else {
-							double cLeft = mapTicketOppIdAttendeesLeft.get(cm.GW_Auctions__Auction_Ticket_OppId__c);
-							mapTicketOppIdAttendeesLeft.put(cm.GW_Auctions__Auction_Ticket_OppId__c, cLeft - 1);
+							double cLeft = mapTicketOppIdAttendeesLeft.get(cm.Auction_Ticket_OppId__c);
+							mapTicketOppIdAttendeesLeft.put(cm.Auction_Ticket_OppId__c, cLeft - 1);
 						}
 					}
 					
@@ -441,7 +441,7 @@ global with sharing class AUC_CTRL_AuctionCheckIn {
 	private string strContactFields {
 		get {
 			if (strContactFields == null) {
-				strContactFields = AUC_AuctionMaintenance.strFieldNamesFromFieldSet('Contact', 'GW_Auctions__AuctionsCheckInFS');
+				strContactFields = AUC_AuctionMaintenance.strFieldNamesFromFieldSet('Contact', 'AuctionsCheckInFS');
 				
 				// make sure Name field that is used in Guests datatable is included.
 				if (!strContactFields.contains(' Name,')) strContactFields += ', Name';
@@ -672,7 +672,7 @@ global with sharing class AUC_CTRL_AuctionCheckIn {
 	public PageReference Close() {
 		string retURL = ApexPages.currentPage().getParameters().get('retURL');
 		if (retURL == null || retURL == '') {
-			retURL = '/apex/GW_Auctions__AuctionTickets';
+			retURL = '/apex/AuctionTickets';
 		}
 		PageReference p = new PageReference(retURL);
         p.setRedirect(true);
