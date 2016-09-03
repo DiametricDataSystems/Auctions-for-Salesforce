@@ -524,7 +524,7 @@ global with sharing class AUC_CTRL_AuctionCheckOut {
 	public PageReference Close() {
 		string retURL = ApexPages.currentPage().getParameters().get('retURL');
 		if (retURL == null || retURL == '') {
-			retURL = '/apex/GW_Auctions__AuctionPurchases';
+			retURL = '/apex/AuctionPurchases';
 		}
 		PageReference p = new PageReference(retURL);
         p.setRedirect(true);
@@ -661,7 +661,7 @@ global with sharing class AUC_CTRL_AuctionCheckOut {
 			} else {	
 		*********/
 			{		
-				return '/apex/GW_Auctions__AuctionReceipts' +
+				return '/apex/AuctionReceipts' +
 		        	'?RenderFormat=pdf' +
 		        	'&auctionId=' + auctionId +
 		        	'&contactId=' + contactIdPurchaser +
