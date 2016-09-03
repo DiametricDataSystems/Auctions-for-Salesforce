@@ -97,7 +97,7 @@ public with sharing class AUC_CTRL_AuctionNewTicketWizard {
 	private string strOppFields {
 		get {
 			if (strOppFields == null) {
-				strOppFields = AUC_AuctionMaintenance.strFieldNamesFromFieldSet('Opportunity', 'GW_Auctions__AuctionNewTicketWizardFS');
+				strOppFields = AUC_AuctionMaintenance.strFieldNamesFromFieldSet('Opportunity', 'AuctionNewTicketWizardFS');
 
 				// make sure Name field is included.
 				if (!strOppFields.contains(' Name,')) strOppFields += ', Name';
@@ -124,7 +124,7 @@ public with sharing class AUC_CTRL_AuctionNewTicketWizard {
 	private string strCMFields {
 		get {
 			if (strCMFields == null) {
-				strCMFields = AUC_AuctionMaintenance.strFieldNamesFromFieldSet('CampaignMember', 'GW_Auctions__AuctionNewTicketWizardFS');
+				strCMFields = AUC_AuctionMaintenance.strFieldNamesFromFieldSet('CampaignMember', 'AuctionNewTicketWizardFS');
 			}
 			return strCMFields;
 		}
@@ -350,7 +350,7 @@ public with sharing class AUC_CTRL_AuctionNewTicketWizard {
 	public PageReference Cancel() {
 		string retURL = ApexPages.currentPage().getParameters().get('retURL');
 		if (retURL == null || retURL == '') {
-			retURL = '/apex/GW_Auctions__AuctionTickets';
+			retURL = '/apex/AuctionTickets';
 		}
 		PageReference p = new PageReference(retURL);
         p.setRedirect(true);
