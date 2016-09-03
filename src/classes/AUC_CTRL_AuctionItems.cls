@@ -6,9 +6,9 @@ public with sharing class AUC_CTRL_AuctionItems extends PageControllerBase {
 	
 	// constructor
 	public AUC_CTRL_AuctionItems() {
-        listStrFields = AUC_AuctionMaintenance.listStrFromFieldSet('Auction_Item__c', 'GW_Auctions__AuctionItemsTabFS');
+        listStrFields = AUC_AuctionMaintenance.listStrFromFieldSet('Auction_Item__c', 'AuctionItemsTabFS');
        	strNameField = listStrFields[0]; 
-       	strObjectType = 'GW_Auctions__Auction_Item__c';			
+       	strObjectType = 'Auction_Item__c';			
 	}
 
 	public override string getStrPageUniqueName() {
@@ -17,11 +17,11 @@ public with sharing class AUC_CTRL_AuctionItems extends PageControllerBase {
 	
 	public override string getStrSoql() {	
 		string strSoql = 'select Id, ' + string.join(listStrFields, ',') + 
-				' from GW_Auctions__Auction_Item__c ' +
-				'where GW_Auctions__Auction__c=\'' + ctrlSoqlListView.auctionId + '\''; 
+				' from Auction_Item__c ' +
+				'where Auction__c=\'' + ctrlSoqlListView.auctionId + '\''; 
 
 		if (ctrlSoqlListView.strAlphaFilter != null) {
-			strSoql += ' and GW_Auctions__Auction_Item_Name__c like \'' + ctrlSoqlListView.strAlphaFilter + '%\'';
+			strSoql += ' and Auction_Item_Name__c like \'' + ctrlSoqlListView.strAlphaFilter + '%\'';
 		}        						
        	return strSoql;			
 	}
@@ -36,12 +36,12 @@ public with sharing class AUC_CTRL_AuctionItems extends PageControllerBase {
 		PageReference p = new PageReference('/' + strPrefix + '/e?' + 
 			// strAuctionFldId + '=' + (listAuc.size() > 0 ? listAuc[0].Name : '') + '&' + 
 			// strAuctionFldId + '_lkid=' + ctrlSoqlListView.auctionId + 
-			'&retURL=/apex/GW_Auctions__AuctionItems');
+			'&retURL=/apex/AuctionItems');
 		return p;
 	}
 	
 	public PageReference DonatedItemConverter() {
-		PageReference p = new PageReference('/apex/GW_Auctions__AuctionDonatedItemConverter?auctionId=' + 
+		PageReference p = new PageReference('/apex/AuctionDonatedItemConverter?auctionId=' + 
 			ctrlSoqlListView.auctionId +
 			'&retURL=' +
 			ApexPages.currentPage().getUrl());
