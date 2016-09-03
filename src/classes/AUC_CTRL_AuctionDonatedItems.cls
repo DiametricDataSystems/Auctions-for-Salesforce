@@ -5,7 +5,7 @@ public with sharing class AUC_CTRL_AuctionDonatedItems extends PageControllerBas
 
 	// constructor
 	public AUC_CTRL_AuctionDonatedItems() {
-        listStrFields = AUC_AuctionMaintenance.listStrFromFieldSet('Opportunity', 'GW_Auctions__AuctionDonatedItemsTabFS');
+        listStrFields = AUC_AuctionMaintenance.listStrFromFieldSet('Opportunity', 'AuctionDonatedItemsTabFS');
        	strNameField = listStrFields[0]; 
        	strObjectType = 'Opportunity'; 	
 	} 
@@ -21,18 +21,18 @@ public with sharing class AUC_CTRL_AuctionDonatedItems extends PageControllerBas
         		'\' and CampaignId=\'' + ctrlSoqlListView.auctionMaintenance.campaignIdAuctionDonors + '\'';
         		
 		if (ctrlSoqlListView.strAlphaFilter != null) {
-			strSoql += ' and GW_Auctions__Auction_Donated_Item_Name__c like \'' + ctrlSoqlListView.strAlphaFilter + '%\'';
+			strSoql += ' and Auction_Donated_Item_Name__c like \'' + ctrlSoqlListView.strAlphaFilter + '%\'';
 		}        		
        	return strSoql;			
 	}
 
 	public override PageReference NewItem() { 
-		PageReference p = new PageReference('/apex/GW_Auctions__AuctionNewDonatedItemWizard?auctionId=' + ctrlSoqlListView.auctionId);
+		PageReference p = new PageReference('/apex/AuctionNewDonatedItemWizard?auctionId=' + ctrlSoqlListView.auctionId);
 		return p;		
 	}
 	
 	public PageReference DonatedItemConverter() {
-		PageReference p = new PageReference('/apex/GW_Auctions__AuctionDonatedItemConverter?auctionId=' + 
+		PageReference p = new PageReference('/apex/AuctionDonatedItemConverter?auctionId=' + 
 			ctrlSoqlListView.auctionId +
 			'&retURL=' +
 			ApexPages.currentPage().getUrl());
