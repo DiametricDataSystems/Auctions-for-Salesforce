@@ -159,7 +159,7 @@ public with sharing class AUC_CTRL_AuctionDonatedItemConverter {
 	public PageReference Cancel() {
 		string retURL = ApexPages.currentPage().getParameters().get('retURL');
 		if (retURL == null || retURL == '') {
-			retURL = '/apex/GW_Auctions__AuctionItems';
+			retURL = '/apex/AuctionItems';
 		}
 		PageReference p = new PageReference(retURL);
         p.setRedirect(true);
