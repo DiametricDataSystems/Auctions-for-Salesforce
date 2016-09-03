@@ -5,7 +5,7 @@ public with sharing class AUC_CTRL_AuctionTickets extends PageControllerBase {
 
 	// constructor
 	public AUC_CTRL_AuctionTickets() {
-        listStrFields = AUC_AuctionMaintenance.listStrFromFieldSet('Opportunity', 'GW_Auctions__AuctionTicketsTabFS');
+        listStrFields = AUC_AuctionMaintenance.listStrFromFieldSet('Opportunity', 'AuctionTicketsTabFS');
        	strNameField = listStrFields[0];  
        	strObjectType = 'Opportunity';	
        	fEditNameField = true;		
@@ -28,22 +28,22 @@ public with sharing class AUC_CTRL_AuctionTickets extends PageControllerBase {
 	}
 
 	public override PageReference NewItem() { 
-		PageReference p = new PageReference('/apex/GW_Auctions__AuctionNewTicketWizard?auctionId=' + ctrlSoqlListView.auctionId);
+		PageReference p = new PageReference('/apex/AuctionNewTicketWizard?auctionId=' + ctrlSoqlListView.auctionId);
 		return p;		
 	}
 	
 	public PageReference AuctionCheckIn() {
-		PageReference p = new PageReference('/apex/GW_Auctions__AuctionCheckIn?auctionId=' + ctrlSoqlListView.auctionId);
+		PageReference p = new PageReference('/apex/AuctionCheckIn?auctionId=' + ctrlSoqlListView.auctionId);
 		return p;
 	}
 	
 	public PageReference AutoAssignBidNumbers() {
-		PageReference p = new PageReference('/apex/GW_Auctions__AuctionAutoBidNumbers?auctionId=' + ctrlSoqlListView.auctionId);
+		PageReference p = new PageReference('/apex/AuctionAutoBidNumbers?auctionId=' + ctrlSoqlListView.auctionId);
 		return p;
 	}
 	
 	public override PageReference EditItem(ID idItem) {
-		return new PageReference('/apex/GW_Auctions__AuctionNewTicketWizard?oppId=' + idItem + '&retURL=/apex/GW_Auctions__AuctionTickets');
+		return new PageReference('/apex/AuctionNewTicketWizard?oppId=' + idItem + '&retURL=/apex/AuctionTickets');
 	}
 	
 	//==================== TEST METHOD(s) ======================================
