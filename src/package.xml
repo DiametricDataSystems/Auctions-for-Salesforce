@@ -3,7 +3,7 @@
     <fullName>Auctions for Salesforce</fullName>
     <apiAccessLevel>Unrestricted</apiAccessLevel>
     <description>Auctions for Salesforce managed package, by David Habib of DJH Consulting.</description>
-    <namespacePrefix>GW_Auctions</namespacePrefix>
+    
     <types>
         <members>AUC_AuctionConstants</members>
         <members>AUC_AuctionMaintenance</members>
