@@ -238,29 +238,7 @@
         <members>Opportunity.GW_Auction_Ticket</members>
         <name>RecordType</name>
     </types>
-    <types>
-        <members>Auction_Management</members>
-        <members>Auction_Management/Auction_Attendees</members>
-        <members>Auction_Management/Auction_Attendees_by_Ticket</members>
-        <members>Auction_Management/Auction_Checked_In_Status</members>
-        <members>Auction_Management/Auction_Donated_Items</members>
-        <members>Auction_Management/Auction_Items_Donations_Purchases</members>
-        <members>Auction_Management/Auction_Items_Full_Info</members>
-        <members>Auction_Management/Auction_Items_without_Purchases</members>
-        <members>Auction_Management/Auction_Opportunities_by_Contact2</members>
-        <members>Auction_Management/Auction_Purchases</members>
-        <members>Auction_Management/Auction_Purchases_by_Bid_Number</members>
-        <members>Auction_Management/Auction_Purchases_by_Contact</members>
-        <members>Auction_Management/Auction_Reconciliation</members>
-        <members>Auction_Management/Auction_Sponsorships</members>
-        <members>Auction_Management/Auction_Table_List_By_Captain</members>
-        <members>Auction_Management/Auction_Table_List_by_Table_Name_Number</members>
-        <members>Auction_Management/Auction_Ticket_Sales</members>
-        <members>Auction_Management/Available_Donated_Items</members>
-        <members>Auction_Management/Conga_Auction_Receipts</members>
-        <members>Auction_Management/Donated_Items_and_their_Auction_Items</members>
-        <name>Report</name>
-    </types>
+    
     <types>
         <members>Auction_Donated_Items_and_their_Auction_Items</members>
         <members>Auction_Items_and_their_Donated_Items</members>
