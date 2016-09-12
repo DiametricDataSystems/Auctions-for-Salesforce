@@ -146,6 +146,8 @@
         <members>Opportunity.Number_of_Items__c</members>
         <members>Opportunity.Number_of_Tickets__c</members>
         <members>Opportunity.Procurred_By__c</members>
+		<members>Opportunity.Closed Won - Not Thanked</members>
+		<members>Opportunity.Type</members>
         <name>CustomField</name>
     </types>
     <types>
