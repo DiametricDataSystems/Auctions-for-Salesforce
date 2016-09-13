@@ -12,10 +12,7 @@
             <fullName>Closed Won</fullName>
             <default>false</default>
         </values>
-        <values>
-            <fullName>Closed Won - Not Thanked</fullName>
-            <default>false</default>
-        </values>
+        
         <values>
             <fullName>Pledged</fullName>
             <default>false</default>
@@ -1709,13 +1706,7 @@
                 <default>false</default>
             </values>
         </picklistValues>
-        <picklistValues>
-            <picklist>Type</picklist>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
+        
     </recordTypes>
     <recordTypes>
         <fullName>GW_Auction_Purchased_Item</fullName>
@@ -1786,10 +1777,7 @@
         </picklistValues>
         <picklistValues>
             <picklist>Type</picklist>
-            <values>
-                <fullName>Cash</fullName>
-                <default>false</default>
-            </values>
+            
             <values>
                 <fullName>Check</fullName>
                 <default>false</default>
@@ -1873,10 +1861,7 @@
         </picklistValues>
         <picklistValues>
             <picklist>Type</picklist>
-            <values>
-                <fullName>Cash</fullName>
-                <default>false</default>
-            </values>
+            
             <values>
                 <fullName>Check</fullName>
                 <default>false</default>
