@@ -222,14 +222,7 @@
         <members>Opportunity.All_Auction_Opportunities</members>
         <name>ListView</name>
     </types>
-    <types>
-        <members>LogACall</members>
-        <members>NewCase</members>
-        <members>NewEvent</members>
-        <members>NewNote</members>
-        <members>NewTask</members>
-        <name>QuickAction</name>
-    </types>
+    
     <types>
         <members>Campaign.GW_Auction_Campaign</members>
         <members>CampaignMember.GW_Auction_Attendee</members>
