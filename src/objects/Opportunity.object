@@ -13,10 +13,7 @@
             <default>false</default>
         </values>
         
-        <values>
-            <fullName>Pledged</fullName>
-            <default>false</default>
-        </values>
+        
         <values>
             <fullName>Prospecting</fullName>
             <default>false</default>
@@ -1778,10 +1775,7 @@
         <picklistValues>
             <picklist>Type</picklist>
             
-            <values>
-                <fullName>Check</fullName>
-                <default>false</default>
-            </values>
+            
             <values>
                 <fullName>Credit Card</fullName>
                 <default>false</default>
@@ -1862,10 +1856,7 @@
         <picklistValues>
             <picklist>Type</picklist>
             
-            <values>
-                <fullName>Check</fullName>
-                <default>false</default>
-            </values>
+            
             <values>
                 <fullName>Credit Card</fullName>
                 <default>false</default>
