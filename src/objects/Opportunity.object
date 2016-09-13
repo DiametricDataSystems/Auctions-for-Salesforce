@@ -1777,10 +1777,7 @@
             
             
             
-            <values>
-                <fullName>Debit Card</fullName>
-                <default>false</default>
-            </values>
+            
         </picklistValues>
     </recordTypes>
     <recordTypes>
@@ -1855,10 +1852,7 @@
             
             
             
-            <values>
-                <fullName>Debit Card</fullName>
-                <default>false</default>
-            </values>
+            
         </picklistValues>
     </recordTypes>
 </CustomObject>
